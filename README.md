@@ -22,3 +22,12 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+1. clone
+2.	bundle
+3. mysql.server start
+4. rake db:create
+5. rake db:migrate
+6. rake:db:seed
+
