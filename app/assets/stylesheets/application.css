@@ -12,4 +12,30 @@
  *
  *= require_tree .
  *= require_self
+ *= require foundation_and_overrides
+
  */
+.movies-grid {
+  .movie-card {
+    width:220px;
+    margin:auto;
+    .poster img {
+      height: 325px;
+      width:100%;
+    }
+    .movie-info { .title { height: 4em; } }
+  }
+}
+
+.movie-label {
+  @include label( $text-size:13px, $bg: #3D3D32 );
+  color: gold;
+}
+
+.top-bar ul  {
+	  list-style-type: none;
+}
+
+a.right.imdb-image img {
+    max-width: 3rem;
+}

@@ -30,4 +30,5 @@ Things you may want to cover:
 4. rake db:create
 5. rake db:migrate
 6. rake:db:seed
+7. rails server 
 

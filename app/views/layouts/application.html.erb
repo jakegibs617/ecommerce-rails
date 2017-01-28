@@ -1,14 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Moviestore</title>
-    <%= csrf_meta_tags %>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <title><%= content_for?(:title) ? yield(:title) : "Rails Ecommerce" %></title>
+    <!-- <link rel="shortcut icon" href="images/favicon.ico" type="image/png"> -->
+<!-- <link rel="shortcut icon" type="image/png" href="http://eg.com/favicon.png"/> -->
+
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <%= favicon_link_tag 'favicon.ico' %>
   </head>
 
-  <body>
+<body>
+
+  <%= render "layouts/header" %>
+
+  <%= render "layouts/alerts" %>
+
+  <div id="main-content" class="row full-min-height">
     <%= yield %>
-  </body>
+  </div>
+
+  <footer class="row">
+    <div class="large-12 columns">
+      <hr> <p>© MovieStore 2014</p>
+    </div>
+  </footer>
+
+  <%= javascript_include_tag "application" %>
+
+</body>
 </html>
