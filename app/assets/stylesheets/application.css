@@ -15,16 +15,8 @@
  *= require foundation_and_overrides
 
  */
-.movies-grid {
-  .movie-card {
-    width:220px;
-    margin:auto;
-    .poster img {
-      height: 325px;
-      width:100%;
-    }
-    .movie-info { .title { height: 4em; } }
-  }
+.right{
+	float:right;
 }
 
 .movie-label {
@@ -35,7 +27,11 @@
 .top-bar ul  {
 	  list-style-type: none;
 }
+.title-area h1{
+	font-size: 1.5rem;
+}
 
 a.right.imdb-image img {
     max-width: 3rem;
 }
+
