@@ -34,3 +34,6 @@ gem 'foundation-rails'
 gem 'devise'
 gem 'redis', '~> 3.0.1'
 gem 'hiredis', '~> 0.6.0'
+
+gem 'braintree', '~> 2.33.1'
+gem 'figaro', '~> 1.0.0'
