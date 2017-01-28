@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170128175425) do
+ActiveRecord::Schema.define(version: 20170128192641) do
 
   create_table "movies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "title"
@@ -21,6 +21,15 @@ ActiveRecord::Schema.define(version: 20170128175425) do
     t.string   "poster_url"
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
+    t.string   "video_url"
+  end
+
+  create_table "purchases", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "movie_id"
+    t.integer  "buyer_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["movie_id", "buyer_id"], name: "index_purchases_on_movie_id_and_buyer_id", unique: true, using: :btree
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

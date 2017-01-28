@@ -1,0 +1,41 @@
+
+@font-face {
+  font-family: 'gotham-rounded';
+  src: url(gotham-rounded-medium.otf);
+}
+
+body {
+  background-image: url(body_bg.png);
+  background-position: center;
+  color: #fff;
+}
+
+.title-area{
+  a { padding:0 !important }
+  i {
+    font-size: 30px;
+    position: relative;
+    top: 2px;
+  }
+}
+
+
+.form-container {
+  padding: 3% 3%;
+  .switch > div {
+    position: relative;
+    top: -5px;
+  }
+}
+
+.movies-grid {
+  .movie-card {
+    max-width:220px;
+    margin:auto;
+    .poster img {
+      height: 325px;
+      width:100%;
+    }
+    .movie-info { .title { height: 4em; } }
+  }
+}
