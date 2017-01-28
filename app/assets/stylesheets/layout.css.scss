@@ -1,16 +1,15 @@
-// Custom layout styles
-// Default font family
+
 @font-face {
   font-family: 'gotham-rounded';
   src: url(gotham-rounded-medium.otf);
 }
-// Body background
+
 body {
   background-image: url(body_bg.png);
   background-position: center;
   color: #fff;
 }
-// Logo
+
 .title-area{
   a { padding:0 !important }
   i {
@@ -19,18 +18,16 @@ body {
     top: 2px;
   }
 }
-// Topbar items
-/*
-not working
-.top-bar-section ul li {  }
-// Forms
+
+
 .form-container {
   padding: 3% 3%;
   .switch > div {
     position: relative;
     top: -5px;
   }
-}*/
+}
+
 .movies-grid {
   .movie-card {
     max-width:220px;

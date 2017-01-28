@@ -32,3 +32,5 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'foundation-rails'
 gem 'devise'
+gem 'redis', '~> 3.0.1'
+gem 'hiredis', '~> 0.6.0'
