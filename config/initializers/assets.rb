@@ -12,4 +12,3 @@ Rails.application.config.assets.version = '1.0'
 Rails.application.config.assets.precompile += %w( .js .css *.css.scss .svg .eot .woff .ttf)
 
 
-RAILS_ENV=production bundle exec rake assets:precompile
