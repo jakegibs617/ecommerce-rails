@@ -47,3 +47,4 @@ gem 'gon', '~> 5.1.2'
 gem 'pry'
 
 gem 'slick_rails'
+ruby "2.2.4"
