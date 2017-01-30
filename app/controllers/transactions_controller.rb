@@ -16,7 +16,7 @@ class TransactionsController < ApplicationController
     	# for some reason i cant seem to get this to fail with a declined sandbox credit card
 
       current_user.purchase_cart_movies!
-      redirect_to root_url, notice: "Congraulations! Your transaction has been successfully!"
+      redirect_to root_url, notice: "Congraulations! Your transaction has been successful!"
     else
       flash[:alert] = "Something went wrong while processing your transaction. Please try again!"
       gon.client_token = generate_client_token
