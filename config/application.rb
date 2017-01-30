@@ -13,6 +13,7 @@ module Moviestore
     # -- all .rb files in that directory are automatically loaded.
 	config.assets.initialize_on_precompile = false
     config.serve_static_assets = true
-
+	config.serve_static_files = true
+	config.public_file_server.enabled = true
   end
 end
