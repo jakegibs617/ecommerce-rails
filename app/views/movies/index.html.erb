@@ -1,28 +1,146 @@
-  <%= render "layouts/slider" %>
+<header class="header " style="width:100vw; margin-left:-10%; background:none;">
+  <!-- <div class="row "> -->
+    <h1 class="headline ">Jacob Giberson  <small>2017</small></h1>
+  <!-- </div> -->
+  <div class="row">
 
-<h4 class="column">Featured Movies</h4>
-<div class="column">
-  <ul class="movies-grid no-bullet row">
-    <% @movies.each do |movie| %>
-      <li class="large-3 medium-4 small-12 columns">
-        <div class="movie-card padly">
-          <%= link_to movie, class: "poster" do %>
-            <%= image_tag movie.poster %>
-          <% end %>
-          <div class="movie-info ell glassy-bg padmy padlx">
-            <div class="title">
-              <h6><%= movie.title %> <span>(<%= movie.release_year %>)</span></h6>
-            </div>
-            <p class="left price label movie-label radius">$ <%= movie.price %></p>
-            <%= link_to movie.imdb, class: "right imdb-image" do %>
-              <%= image_tag ("imdb_logo.png") %>
-            <% end %>
-          </div>
-        </div>
+    <ul class="header-subnav ">
+      <li>
+          <h1>
+            <a href="/">
+              <i class="fi-play-video"></i> Home
+            </a>
+          </h1>
       </li>
-    <% end %>
-  </ul>
+        <%if signed_in?%>
+          <li>
+            <%= link_to cart_path do%>
+              <i class="fi-shopping-cart"></i> My Cart (<span class="cart-count"><%=current_user.cart_count%></span>)
+            <%end%>
+          </li>
+          <li><%=link_to current_user.email, edit_user_registration_path%></li>
+          <li><%=link_to "Logout", destroy_user_session_path, method: :delete%></li>
+        <%else%>
+          <li><%=link_to "Register", new_user_registration_path%></li>
+          <li><%=link_to "Login", new_user_session_path%></li>
+        <%end%>
+    </ul>
+  </div>
+
+</header>
+
+<div class="row">
+  <div class="small-offset-2 columns">
+
+    <%= render "layouts/slider" %>
+  </div>
 </div>
 
 <br>
 
+<div class="off-canvas-wrapper">
+      <%if notice.present? || alert.present? %>
+      <div class="row">
+        <%is_alert = alert.present? ? "alert" : ""%>
+          <div data-alert class="alert-box <%=is_alert%>">
+            <%=notice || alert%>
+            <a href="#" class="close">&times;</a>
+          </div>
+      </div>
+    <%end%>
+      <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+
+        <div class="off-canvas position-left reveal-for-large" id="my-info" data-off-canvas data-position="left">
+          <div class="row column">
+            <br>
+            <img class="thumbnail" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAf7AAAAJDkwNjdlZDg4LTNkNjEtNDM4MC1hYTdiLWVmZWI3YWY5MGQxMA.jpg">
+            <h5>Jacob Giberson</h5>
+            <p>This is where I will eventually say a little bit about who I am</p>
+          </div>
+        </div>
+
+        <div class="off-canvas-content" data-off-canvas-content>
+          <div class="title-bar hide-for-large">
+            <div class="title-bar-left">
+              <button class="menu-icon" type="button" data-open="my-info"></button>
+              <span class="title-bar-title">Jacob Giberson</span>
+            </div>
+          </div>
+          <div >
+            <div class="row column">
+              <h1>Hello! This is one of my portfolios.</h1>
+              <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus urna sed urna ultricies ac tempor dui sagittis. In condimentum facilisis porta. Sed nec diam eu diam mattis viverra. Nulla fringilla.</p>
+            </div>
+          </div>
+          <div class="row small-up-2 medium-up-3 large-up-4">
+            <% @movies.each do |movie| %>
+              <div class="column ">
+                <%= link_to movie, class: "poster " do %>
+                  <%= image_tag movie.poster %>
+                <% end %>
+                <h5 class="movie-info ell glassy-bg padmy padlx"><%= movie.title %> <span>(<%= movie.release_year %>)</span></h5>
+                <p class="left price label movie-label radius">$ <%= movie.price %></p>
+                <%= link_to movie.imdb, class: "right imdb-image" do %>
+                  <%= image_tag ("imdb_logo.png") %>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+
+          <hr>
+
+          <div class="row">
+            <div class="medium-6 columns">
+              <h3>Contact Me</h3>
+              <p>Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis porttitor.</p>
+              <ul class="menu">
+                <li><a href="https://github.com/jakegibs617">Github</a></li>
+                <li><a href="https://www.linkedin.com/in/jakegibs617">LinkedIn</a></li>
+                <li><a href="http://anotherlauncher.tumblr.com/">Blog</a></li>
+              </ul>
+            </div>
+            <div class="medium-6 columns">
+              <label>Name
+                <input type="text" placeholder="Name">
+              </label>
+              <label>Email
+                <input type="text" placeholder="Email">
+              </label>
+              <label>
+                Message
+                <textarea placeholder="hello world"></textarea>
+              </label>
+              <input type="submit" class="button expanded" value="Submit">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<footer class="footer" style="width:100vw; background:none;">
+  <div class="row ">
+
+    <div class="small-12 medium-3 medium-offset-2 large-4 columns">
+      <i class="fi-html5"></i>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit impedit consequuntur at! Amet sed itaque nostrum, distinctio eveniet odio, id ipsam fuga quam minima cumque nobis veniam voluptates deserunt!</p>
+    </div>
+    <div class="small-6 medium-2 medium-offset-1 large-2 columns">
+      <h4>Work With Me</h4>
+      <ul class="footer-links">
+        <li><a href="#">What I Do</a></li>
+        <li><a href="#">Pricing</a></li>
+        <li><a href="#">Events</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">FAQ's</a></li>
+      <ul>
+    </div>
+    <div class="small-6 medium-4 large-2 columns">
+      <h4>Follow Me</h4>
+      <ul class="footer-links">
+        <li><a href="https://github.com/jakegibs617">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/jakegibs617">LinkedIn</a></li>
+        <li><a href="http://anotherlauncher.tumblr.com/">Blog</a></li>
+      <ul>
+    </div>
+  </div>
+</footer>

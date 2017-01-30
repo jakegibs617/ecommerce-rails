@@ -45,7 +45,7 @@ a.right.imdb-image img {
 }
 
 .footer {
-  background-color: #2980b9;
+  /*background-color: #2980b9;*/
   padding: 2rem 4rem;
   text-align: center;
   color: #fff;
@@ -73,10 +73,25 @@ a.right.imdb-image img {
     border-left: 1px solid #b3b3b3;
     min-height: 280px;
   }
+  .slideshow{
+    margin-left: -5rem;
+  }
 }
+
 .footer-links {
   list-style-type: none;
 }
 .footer-links li {
   margin-top: .5em;
+}
+
+.poster img {
+    width: 214px;
+}
+/*size: "195x288"*/
+
+.slideshow img{
+    width: 195px;
+    height: 288px;
+    padding: 5px;
 }

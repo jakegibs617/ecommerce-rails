@@ -1,7 +1,8 @@
 
-<div class="slideshow" data-slick='{"slidesToShow": 4, "slidesToScroll": 4}'>
+<div class="slideshow hide-for-small-only hide-for-medium-only">
+
   <% @movies.each do |movie| %>
-      <div class="text-center">  <%= link_to image_tag(movie.poster, title: movie.title, size: "100x100"), movie_path(movie) %></div>
+      <div >  <%= link_to image_tag(movie.poster, title: movie.title), movie_path(movie) %></div>
   <% end %>
 </div>
 
@@ -12,4 +13,5 @@
 	  autoplay: true,
 	  autoplaySpeed: 5000,
 	});
+
 </script>

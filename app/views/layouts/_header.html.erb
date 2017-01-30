@@ -1,24 +1,27 @@
-<header class="header">
-  <h1 class="headline">Foundation  <small>by ZURB</small></h1>
-  <ul class="header-subnav">
-    <li>
-        <h1>
-          <a href="/">
-            <i class="fi-play-video"></i> Rails Ecommerce
-          </a>
-        </h1>
-    </li>
-      <%if signed_in?%>
-        <li>
-          <%= link_to cart_path do%>
-            <i class="fi-shopping-cart"></i> My Cart (<span class="cart-count"><%=current_user.cart_count%></span>)
-          <%end%>
-        </li>
-        <li><%=link_to current_user.email, edit_user_registration_path%></li>
-        <li><%=link_to "Logout", destroy_user_session_path, method: :delete%></li>
-      <%else%>
-        <li><%=link_to "Register", new_user_registration_path%></li>
-        <li><%=link_to "Login", new_user_session_path%></li>
-      <%end%>
-  </ul>
+<header class="header columns">
+    <h1 class="headline ">Jacob Giberson  <small>2017</small></h1>
+
+
+    <ul class="header-subnav ">
+      <li>
+          <h1>
+            <a href="/">
+              <i class="fi-play-video"></i> Home
+            </a>
+          </h1>
+      </li>
+        <%if signed_in?%>
+          <li>
+            <%= link_to cart_path do%>
+              <i class="fi-shopping-cart"></i> My Cart (<span class="cart-count"><%=current_user.cart_count%></span>)
+            <%end%>
+          </li>
+          <li><%=link_to current_user.email, edit_user_registration_path%></li>
+          <li><%=link_to "Logout", destroy_user_session_path, method: :delete%></li>
+        <%else%>
+          <li><%=link_to "Register", new_user_registration_path%></li>
+          <li><%=link_to "Login", new_user_session_path%></li>
+        <%end%>
+    </ul>
+
 </header>
