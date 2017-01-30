@@ -13,6 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
+//= require slick
+
+
 
 //= require_tree .
 

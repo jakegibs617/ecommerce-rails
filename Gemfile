@@ -39,3 +39,5 @@ gem 'braintree', '~> 2.33.1'
 gem 'figaro', '~> 1.0.0'
 gem 'gon', '~> 5.1.2'
 gem 'pry'
+
+gem 'slick_rails'
