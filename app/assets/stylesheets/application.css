@@ -35,3 +35,6 @@ a.right.imdb-image img {
     max-width: 3rem;
 }
 
+#imdb-logo-show img{
+	height: 3rem;
+}
