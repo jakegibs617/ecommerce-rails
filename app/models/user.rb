@@ -4,7 +4,31 @@ class User < ActiveRecord::Base
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  
+    
+# Braintree methods
+  FIELDS = [:first_name, :last_name, :phone, :website, :company, :fax, :addresses, :credit_cards, :custom_fields]
+  attr_accessor *FIELDS
+
+  def has_payment_info?
+    braintree_customer_id
+  end
+
+  def with_braintree_data!
+    return self unless has_payment_info?
+    braintree_data = Braintree::Customer.find(braintree_customer_id)
+
+    FIELDS.each do |field|
+      send(:"#{field}=", braintree_data.send(field))
+    end
+    self
+  end
+
+  def default_credit_card
+    return unless has_payment_info?
+    credit_cards.find { |cc| cc.default? }
+  end
+
+  # Cart Methods
   def cart_count
     $redis.scard "cart#{id}"
   end
@@ -32,4 +56,5 @@ class User < ActiveRecord::Base
   def purchase?(movie)
   	movies.include?(movie)
   end
+
 end

@@ -1,3 +1,4 @@
+require 'pry'
 class Movie < ActiveRecord::Base
   has_many :purchases
   has_many :buyers, through: :purchases
