@@ -10,6 +10,8 @@
     <%= include_gon %>
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+
+
     <%= csrf_meta_tags %>
 
 
@@ -25,12 +27,7 @@
     <%= yield %>
   </div>
 
-  <footer class="row">
-    <div class="large-12 columns">
-      <hr> <p>jakegibs617</p>
-    </div>
-  </footer>
-
+  <%= render "layouts/footer" %>
 
 </body>
 
