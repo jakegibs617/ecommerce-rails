@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'transactions/new'
+
 # Root page
   root 'movies#index'
 
@@ -15,5 +17,7 @@ Rails.application.routes.draw do
     put 'remove/:movie_id', to: 'carts#remove', as: :remove_from
   end
 
+  # Payment
+  resources :transactions, only: [:new, :create]
 end
 
