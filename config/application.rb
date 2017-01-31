@@ -15,5 +15,6 @@ module Moviestore
     config.serve_static_assets = true
 	config.serve_static_files = true
 	config.public_file_server.enabled = true
+	config.assets.enabled = true
   end
 end
