@@ -32,3 +32,6 @@ Things you may want to cover:
 6. rake:db:seed
 7. rails server 
 
+https://still-spire-48733.herokuapp.com/
+
+![image](http://imgur.com/a/ME8Xf)
