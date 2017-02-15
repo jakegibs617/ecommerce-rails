@@ -1,10 +1,13 @@
 
 <div class="slideshow hide-for-small-only hide-for-medium-only">
 
-  <% @movies.each do |movie| %>
-      <div >  <%= link_to image_tag(movie.poster, title: movie.title), movie_path(movie) %></div>
+<!-- slick slier of movies -->
+  <% @movies.each do |m| %>
+      <div> <%= link_to image_tag(m.poster, title: m.title), movie_path(m) %> </div>
   <% end %>
+
 </div>
+
 
 <script type="text/javascript">
 	$('.slideshow').slick({

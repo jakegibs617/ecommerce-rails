@@ -30,7 +30,9 @@ Things you may want to cover:
 4. rake db:create
 5. rake db:migrate
 6. rake:db:seed
-7. rails server 
+7. mysql.server start
+8. redis-server
+9. rails s
 
 https://still-spire-48733.herokuapp.com/
 
